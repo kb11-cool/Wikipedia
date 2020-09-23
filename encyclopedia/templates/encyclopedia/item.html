@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Encyclopedia | {{title}}
+{% endblock %}
+
+{% block body %}
+
+{{listitem | safe}}
+<a href="{% url 'edit' title %}">
+    <button type="submit" class="btn btn-outline-info">Edit page</button>
+</a>
+
+{% endblock %}

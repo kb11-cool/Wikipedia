@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Create New
+{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1 style="padding-bottom:10px;"">Create new Page</h1>
+    <div class="alert alert-info" style="width:95%;" role="alert">
+        Note that the text you write should be in Markdown.
+    </div>
+    <form method="POST">
+        {%csrf_token%}
+        <input type="text" class="form-control" name="title" placeholder="Title" style="width: 70%;">
+        <textarea name="content" class="form-control" autocomplete="off" placeholder="Enter the Text"
+            rows="13" style="width: 70%; margin-top: 50px;"></textarea>
+        <button type="submit" class="btn btn-outline-success" style="margin-top: 25px;">Create</button>
+    </form>
+</div>
+
+
+{% endblock %}
